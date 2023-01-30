@@ -1,0 +1,76 @@
+.charts {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+
+  @include onPhone {
+    flex-direction: row;
+  }
+}
+
+.chart {
+  display: grid;  
+  grid-template-columns: 200px 1fr;
+
+  @include onPhone {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 150px;
+  }
+
+  &__bar {
+    height: 25px;
+    width: 100%;
+    order: 2;
+
+    @include onPhone {
+      order: 1;
+      height: 400px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+
+    &__price {
+      position: absolute;
+      left: -40px;
+
+      @include onPhone {
+        position: static;
+      }
+    }
+
+    &__item {
+      background: #7f7f7f;
+
+      &--blue {
+        background: blue;
+      }
+      &--red {
+        background: red;
+      }
+      &--orange {
+        background: orange;
+      }
+      &--purple {
+        background: purple;
+      }
+      
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+  }
+
+  &__options {
+    display: flex;
+    gap: 20px;
+  }
+}

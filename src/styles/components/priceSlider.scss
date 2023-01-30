@@ -1,0 +1,21 @@
+.price-sliders {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  gap: 40px;
+
+  @include onPhone {
+    flex-direction: column;
+  }
+}
+
+.price-slider {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include onPhone {
+    width: 100%;
+  }
+}

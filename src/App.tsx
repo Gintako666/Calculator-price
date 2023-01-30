@@ -1,27 +1,18 @@
 import React from 'react';
-import './App.scss';
+import './styles/App.scss';
+import 'bulma/css/bulma.min.css';
+import { Sliders } from './components/Sliders';
+import { Charts } from './components/Charts';
 
-interface Props {
-  onClick: () => void;
-}
-
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
-
-export const App: React.FC = () => {
+const App: React.FC = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
+    <div className="App">
+      <div className="container">
+        <Sliders />
+        <Charts />
+      </div>
     </div>
   );
 };
+
+export default App;
